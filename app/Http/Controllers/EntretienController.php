@@ -11,19 +11,19 @@ use Illuminate\View\View;
 
 class EntretienController extends Controller
 {
-    public function index(Request $request): Response
+    public function index(Request $request)
     {
         $entretiens = Entretien::all();
 
         return view('entretien.index', compact('entretiens'));
     }
 
-    public function create(Request $request): Response
+    public function create(Request $request)
     {
         return view('entretien.create');
     }
 
-    public function store(EntretienStoreRequest $request): Response
+    public function store(EntretienStoreRequest $request)
     {
         $entretien = Entretien::create($request->validated());
 
@@ -32,17 +32,17 @@ class EntretienController extends Controller
         return redirect()->route('entretien.index');
     }
 
-    public function show(Request $request, Entretien $entretien): Response
+    public function show(Request $request, Entretien $entretien)
     {
         return view('entretien.show', compact('entretien'));
     }
 
-    public function edit(Request $request, Entretien $entretien): Response
+    public function edit(Request $request, Entretien $entretien)
     {
         return view('entretien.edit', compact('entretien'));
     }
 
-    public function update(EntretienUpdateRequest $request, Entretien $entretien): Response
+    public function update(EntretienUpdateRequest $request, Entretien $entretien)
     {
         $entretien->update($request->validated());
 
@@ -51,7 +51,7 @@ class EntretienController extends Controller
         return redirect()->route('entretien.index');
     }
 
-    public function destroy(Request $request, Entretien $entretien): Response
+    public function destroy(Request $request, Entretien $entretien)
     {
         $entretien->delete();
 

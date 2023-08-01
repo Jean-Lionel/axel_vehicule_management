@@ -11,19 +11,19 @@ use Illuminate\View\View;
 
 class VehiculeController extends Controller
 {
-    public function index(Request $request): Response
+    public function index(Request $request)
     {
         $vehicules = Vehicule::all();
 
         return view('vehicule.index', compact('vehicules'));
     }
 
-    public function create(Request $request): Response
+    public function create(Request $request)
     {
         return view('vehicule.create');
     }
 
-    public function store(VehiculeStoreRequest $request): Response
+    public function store(VehiculeStoreRequest $request)
     {
         $vehicule = Vehicule::create($request->validated());
 
@@ -32,17 +32,17 @@ class VehiculeController extends Controller
         return redirect()->route('vehicule.index');
     }
 
-    public function show(Request $request, Vehicule $vehicule): Response
+    public function show(Request $request, Vehicule $vehicule)
     {
         return view('vehicule.show', compact('vehicule'));
     }
 
-    public function edit(Request $request, Vehicule $vehicule): Response
+    public function edit(Request $request, Vehicule $vehicule)
     {
         return view('vehicule.edit', compact('vehicule'));
     }
 
-    public function update(VehiculeUpdateRequest $request, Vehicule $vehicule): Response
+    public function update(VehiculeUpdateRequest $request, Vehicule $vehicule)
     {
         $vehicule->update($request->validated());
 
@@ -51,7 +51,7 @@ class VehiculeController extends Controller
         return redirect()->route('vehicule.index');
     }
 
-    public function destroy(Request $request, Vehicule $vehicule): Response
+    public function destroy(Request $request, Vehicule $vehicule)
     {
         $vehicule->delete();
 

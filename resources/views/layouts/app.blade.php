@@ -15,54 +15,63 @@
 
     <link rel="stylesheet" href="{{ asset('side/v06_css_style.css') }}">
     <title>Sidebar #1</title>
-   </head>
-    <body>
-        <aside class="sidebar">
-            <div class="toggle">
-                <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
-                    <span></span>
-                </a>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="toggle">
+            <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+                <span></span>
+            </a>
+        </div>
+        <div class="side-inner">
+            <div class="logo-wrap">
+                <div class="logo">
+                    <span>C</span>
+                </div>
+                <span class="logo-text">{{ auth()->user()?->name }}</span>
             </div>
-            <div class="side-inner">
-                <div class="logo-wrap">
-                    <div class="logo">
-                        <span>C</span>
-                    </div>
-                    <span class="logo-text">Colorlib</span>
-                </div>
-                <div class="search-form">
-                    <form action="#">
-                        <span class="wrap-icon">
-                            <span class="icon-search2"></span>
-                        </span>
-                        <input type="text" class="form-control" placeholder="Search...">
-                    </form>
-                </div>
-                <div class="nav-menu">
-                    <ul>
-                        <li class="active"><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-home2 mr-3"></span><span class="menu-text">Home</span></a></li>
-                        <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-videocam mr-3"></span><span class="menu-text">Videos</span></a></li>
-                        <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-book mr-3"></span><span class="menu-text">Books</span></a></li>
-                        <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-shopping-cart mr-3"></span><span class="menu-text">Store</span></a></li>
-                        <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-pie-chart mr-3"></span><span class="menu-text">Analytics</span></a></li>
-                        <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-cog mr-3"></span><span class="menu-text">Settings</span></a></li>
-                    </ul>
+            <div class="search-form">
+                <form action="#">
+                    <span class="wrap-icon">
+                        <span class="icon-search2"></span>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Search...">
+                </form>
+            </div>
+            <div class="nav-menu">
+                <ul>
+                    <li class="active"><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-home2 mr-3"></span><span class="menu-text">Home</span></a></li>
+                    <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-videocam mr-3"></span><span class="menu-text">Videos</span></a></li>
+                    <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-book mr-3"></span><span class="menu-text">Books</span></a></li>
+                    <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-shopping-cart mr-3"></span><span class="menu-text">Store</span></a></li>
+                    <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-pie-chart mr-3"></span><span class="menu-text">Analytics</span></a></li>
+                    <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-cog mr-3"></span><span class="menu-text">Settings</span></a></li>
+
+                    <li><a href="#" class="d-flex align-items-center" href="{{ route('logout') }}"
+                        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();"><span class="wrap-icon icon-cog mr-3" ></span><span class="menu-text">Logout</span></a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                            @csrf
+                        </form>
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </aside>
+    <main>
+        <div class="site-section">
+            <div class="container">
+                <div class="row justify-content-center">
+                    @yield('content')
                 </div>
             </div>
-        </aside>
-        <main>
-            <div class="site-section">
-                <div class="container">
-                    <div class="row justify-content-center">
- @yield('content')
-                    </div>
-                </div>
-            </div>
-        </main>
-        <script src="{{ asset('side/v06_js_jquery-3.3.1.min.js') }}"></script>
-        <script src="{{ asset('side/v06_js_popper.min.js') }}"></script>
-        <script src="{{ asset('side/v06_js_bootstrap.min.js') }}"></script>
-        <script src="{{ asset('side/v06_js_main.js') }}"></script>
-        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7f2c62e429544ec9","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.7.0","si":100}' crossorigin="anonymous"></script>
-    </body>
-    </html>
+        </div>
+    </main>
+    <script src="{{ asset('side/v06_js_jquery-3.3.1.min.js') }}"></script>
+    <script src="{{ asset('side/v06_js_popper.min.js') }}"></script>
+    <script src="{{ asset('side/v06_js_bootstrap.min.js') }}"></script>
+    <script src="{{ asset('side/v06_js_main.js') }}"></script>
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7f2c62e429544ec9","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.7.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>

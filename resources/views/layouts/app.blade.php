@@ -1,80 +1,247 @@
+
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
+
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('side/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('side/carousel.min.css') }}">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="stylesheet" href="{{ asset('side/bootstrap.min.css') }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
-
-    <!-- Scripts -->
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
-</head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+    <link rel="stylesheet" href="{{ asset('side/v06_css_style.css') }}">
+    <title>Sidebar #1</title>
+   </head>
+    <body>
+        <aside class="sidebar">
+            <div class="toggle">
+                <a href="#" class="burger js-menu-toggle" data-toggle="collapse" data-target="#main-navbar">
+                    <span></span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
+            </div>
+            <div class="side-inner">
+                <div class="logo-wrap">
+                    <div class="logo">
+                        <span>C</span>
+                    </div>
+                    <span class="logo-text">Colorlib</span>
+                </div>
+                <div class="search-form">
+                    <form action="#">
+                        <span class="wrap-icon">
+                            <span class="icon-search2"></span>
+                        </span>
+                        <input type="text" class="form-control" placeholder="Search...">
+                    </form>
+                </div>
+                <div class="nav-menu">
+                    <ul>
+                        <li class="active"><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-home2 mr-3"></span><span class="menu-text">Home</span></a></li>
+                        <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-videocam mr-3"></span><span class="menu-text">Videos</span></a></li>
+                        <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-book mr-3"></span><span class="menu-text">Books</span></a></li>
+                        <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-shopping-cart mr-3"></span><span class="menu-text">Store</span></a></li>
+                        <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-pie-chart mr-3"></span><span class="menu-text">Analytics</span></a></li>
+                        <li><a href="#" class="d-flex align-items-center"><span class="wrap-icon icon-cog mr-3"></span><span class="menu-text">Settings</span></a></li>
                     </ul>
                 </div>
             </div>
-        </nav>
-
-        <main class="py-4">
-            @yield('content')
+        </aside>
+        <main>
+            <div class="site-section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-9">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="d-flex post-entry">
+                                        <div class="custom-thumbnail">
+                                            <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+                                        </div>
+                                        <div class="post-content">
+                                            <h3>How the gut microbes you're born with affect your lifelong health</h3>
+                                            <div class="post-meta"><span>Posted:</span> Dec 17, 2019</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </main>
-    </div>
-</body>
-</html>
+        <script src="{{ asset('side/v06_js_jquery-3.3.1.min.js') }}"></script>
+        <script src="{{ asset('side/v06_js_popper.min.js') }}"></script>
+        <script src="{{ asset('side/v06_js_bootstrap.min.js') }}"></script>
+        <script src="{{ asset('side/v06_js_main.js') }}"></script>
+        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7f2c62e429544ec9","token":"cd0b4b3a733644fc843ef0b185f98241","version":"2023.7.0","si":100}' crossorigin="anonymous"></script>
+    </body>
+    </html>

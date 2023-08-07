@@ -6,9 +6,9 @@
         <meta name="author" content="CodeHim" />
         <title>Authentification</title>
         <!-- Style CSS -->
-        <link rel="stylesheet" href="./css/style.css" />
+        <link rel="stylesheet" href="{{ asset('template/css/style.css') }}" />
         <!-- Demo CSS (No need to include it into your project) -->
-        <link rel="stylesheet" href="./css/demo.css" />
+        <link rel="stylesheet" href="{{ asset('template/css/demo.css') }}" />
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
@@ -21,7 +21,7 @@
             <div class="container">
                 <div class="row content">
                     <div class="col-md-6 mb-3">
-                        <img src="css/undraw_electric_car_b-7-hl.svg" />
+  <img class="img-fluid" src="{{ asset('template/css/undraw_electric_car_b-7-hl.svg') }}" />
                     </div>
                     <div class="col-md-6">
                         <h3 class="signin-text mb-3">Sign In</h3>

@@ -50,7 +50,7 @@ aside, main {
   min-height: 580px; }
 
 aside {
-  width: 70px;
+  width:  90px;
   left: 0;
   z-index: 1001;
   position: fixed;
@@ -80,7 +80,7 @@ aside {
     -webkit-box-shadow: 10px 0 30px 0 rgba(0, 0, 0, 0.2);
     box-shadow: 10px 0 30px 0 rgba(0, 0, 0, 0.2); }
   aside .side-inner {
-    padding: 30px 0;
+    padding: 60px 0;
     height: 100vh;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;

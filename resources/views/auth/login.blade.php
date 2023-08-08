@@ -16,22 +16,25 @@
     </head>
     <body>
         <!--$%adsense%$-->
-        <main class="cd__main">
+        <main class="cd__main " style="margin:20px auto">
             <!-- Start DEMO HTML (Use the following code into your project)-->
-            <div class="container">
-                <div class="row content">
-                    <div class="col-md-6 mb-3">
+            <div class="container ">
+                <div class="row content shadow p-3 mb-5 bg-white rounded p-4">
+                    <div class="col-md-6 mb-3 ">
   <img class="img-fluid" src="{{ asset('template/css/undraw_electric_car_b-7-hl.svg') }}" />
                     </div>
                     <div class="col-md-6">
                         <h3 class="signin-text mb-3">Sign In</h3>
-                        <form>
+                        <form method="POST" action="{{route('login')}}">
+                            @csrf
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input
+                                focus
                                     type="email"
                                     name="email"
                                     class="form-control"
+                                    style="text-indent:20px"
                                 />
                             </div>
                             <div class="form-group">
@@ -40,7 +43,8 @@
                                     type="password"
                                     name="password"
                                     class="form-control"
-                                />
+                                    style="text-indent:20px"
+                                    />
                             </div>
                             <div class="form-group form-check">
                                 <input

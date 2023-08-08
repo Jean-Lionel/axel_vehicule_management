@@ -4,9 +4,9 @@ body{
     background-color: #00ac96;
     overflow: hidden;
 }
-.cd__main{
-    background: #00ac96 !important;
-}
+/* .cd__main{
+    box-shadow: ;
+} */
 .content{
     margin: 8%;
     background-color: #fff;
@@ -50,8 +50,8 @@ body{
 .btn-class{
     border-color: #00ac96;
     color: #00ac96;
+    background-color:  #00ac96;
 }
 .btn-class:hover{
-    background-color:  #00ac96;
     color: #fff;
 }

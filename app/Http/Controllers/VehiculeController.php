@@ -13,7 +13,17 @@ class VehiculeController extends Controller
 {
     public function index(Request $request)
     {
-        $vehicules = Vehicule::all();
+        $search = \Request::query('search_keyword');
+        
+        $vehicules = Vehicule::where(function($q) use ($search){
+            if($search){
+                $q->where('name','LIKE', '%'.$search.'%')
+                    ->orWhere('marque','LIKE', '%'.$search.'%')
+                    ->orWhere('matricule','LIKE', '%'.$search.'%');
+            }else{
+                return Vehicule::all();
+            }
+        })->latest()->paginate();
 
         return view('vehicule.index', compact('vehicules'));
     }
@@ -26,9 +36,7 @@ class VehiculeController extends Controller
     public function store(VehiculeStoreRequest $request)
     {
         $vehicule = Vehicule::create($request->validated());
-
         $request->session()->flash('vehicule.id', $vehicule->id);
-
         return redirect()->route('vehicule.index');
     }
 
@@ -52,9 +60,8 @@ class VehiculeController extends Controller
     }
 
     public function destroy(Request $request, Vehicule $vehicule)
-    {
+    {   
         $vehicule->delete();
-
         return redirect()->route('vehicule.index');
     }
 }

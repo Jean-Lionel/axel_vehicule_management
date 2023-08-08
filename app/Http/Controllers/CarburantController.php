@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\CarburantStoreRequest;
 use App\Http\Requests\CarburantUpdateRequest;
 use App\Models\Carburant;
+use App\Models\Vehicule;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -20,11 +21,13 @@ class CarburantController extends Controller
 
     public function create(Request $request)
     {
-        return view('carburant.create');
+        $vehicules=Vehicule::all();
+        return view('carburant.create',compact('vehicules'));
     }
 
     public function store(CarburantStoreRequest $request)
     {
+        // dd($request);die;
         $carburant = Carburant::create($request->validated());
 
         $request->session()->flash('carburant.id', $carburant->id);
@@ -39,7 +42,8 @@ class CarburantController extends Controller
 
     public function edit(Request $request, Carburant $carburant)
     {
-        return view('carburant.edit', compact('carburant'));
+        $vehicules=Vehicule::all();
+        return view('carburant.edit', compact('carburant','vehicules'));
     }
 
     public function update(CarburantUpdateRequest $request, Carburant $carburant)

@@ -13,9 +13,9 @@
                 <div class="row">
                     <input type="text" class="form-control col-md-5" placeholder="Votre Recherche Ici" name="search_keyword">
                     <h2 class="col-md-1"></h2>
-                    <button  type="submit" class="btn btn-sm btn-primary col-md-2">Chercher</button>
+                    <button  type="submit" class="btn btn-sm btn-primary col-md-1"><i class="bi bi-search"></i>&nbsp;Chercher</button>
                     <h2 class="col-md-1"></h2>
-                    <a href="{{route('depense.create')}}" class="btn btn-sm btn-success col-md-1"><i class="fa fa-plus"></i>Nouveau</a>
+                    <a href="{{route('depense.create')}}" class="btn btn-sm btn-success col-md-1"><i class="bi bi-plus-lg"></i>&nbsp;Nouveau</a>
                 </div>
             </form>
         </div>
@@ -43,12 +43,12 @@
                         <td>{{$depense->user->name  }}</td>
                         <td>
                           <div class="row">
-                            <a href="{{route('depense.show',$depense)}}" class="col-3 btn btn-sm btn-primary"></a>
-                            <a href="{{route('depense.edit',$depense)}}" class="col-3 btn btn-sm btn-warning"></a>
+                            <a href="{{route('depense.show',$depense)}}" class="col-3 btn btn-sm btn-primary"><i class="bi bi-eye"></i></a>
+                            <a href="{{route('depense.edit',$depense)}}" class="col-3 btn btn-sm btn-warning"><i class="bi bi-pen"></i></a>
                             <form action="{{route('depense.destroy',$depense)}}" method="POST" class="col-3">
                               @csrf
                               @method("DELETE")
-                              <button onclick="return confirm('Voulez-vous Confirmer?')" class="btn btn-sm btn-danger"></button>
+                              <button onclick="return confirm('Voulez-vous Confirmer?')" class="btn btn-sm btn-danger"><i class="bi bi-x-lg"></i></button>
                             </form>
                           </div>
                         </td>

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\EntretienStoreRequest;
 use App\Http\Requests\EntretienUpdateRequest;
 use App\Models\Entretien;
+use App\Models\Maintenance;
+use App\Models\Vehicule;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -20,7 +22,9 @@ class EntretienController extends Controller
 
     public function create(Request $request)
     {
-        return view('entretien.create');
+        $vehicules=Vehicule::all();
+        $maintenances=Maintenance::all();
+        return view('entretien.create',compact('vehicules','maintenances'));
     }
 
     public function store(EntretienStoreRequest $request)
@@ -39,7 +43,9 @@ class EntretienController extends Controller
 
     public function edit(Request $request, Entretien $entretien)
     {
-        return view('entretien.edit', compact('entretien'));
+        $vehicules=Vehicule::all();
+        $maintenances=Maintenance::all();
+        return view('entretien.edit', compact('entretien','vehicules','maintenances'));
     }
 
     public function update(EntretienUpdateRequest $request, Entretien $entretien)

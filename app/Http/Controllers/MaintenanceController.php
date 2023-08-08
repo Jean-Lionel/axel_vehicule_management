@@ -13,7 +13,15 @@ class MaintenanceController extends Controller
 {
     public function index(Request $request)
     {
-        $maintenances = Maintenance::all();
+        $search = \Request::query('search_keyword');
+        
+        $maintenances = Maintenance::where(function($q) use ($search){
+            if($search){
+                $q->where('name','LIKE', '%'.$search.'%');
+            }else{
+                return Maintenance::all();
+            }
+        })->latest()->paginate();
 
         return view('maintenance.index', compact('maintenances'));
     }
